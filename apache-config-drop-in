@@ -1,4 +1,14 @@
 <VirtualHost *:80>
+
+WSGIScriptAlias /auth-test /var/www/hackspace-foundation-sites/lhs/wsgi.py/auth-test
+WSGIScriptAlias /auth-required-test /var/www/hackspace-foundation-sites/lhs/wsgi.py/auth-required-test
+
+<Directory /var/www/hackspace-foundation-sites/lhs>
+<Files wsgi.py>
+Require all granted
+</Files>
+</Directory>
+
 DocumentRoot /var/www/hackspace-foundation-sites/london.hackspace.org.uk
 
 Options -Indexes -MultiViews

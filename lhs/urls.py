@@ -16,6 +16,11 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
+from main.authtest_views import auth_test, auth_required_test
+
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+
+    url(r'^auth-test/', auth_test),
+    url(r'^auth-required-test/', auth_required_test),
 ]
