@@ -8,6 +8,13 @@ https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/
 """
 
 import os
+import sys
+
+sys.path = [
+        '/var/www/hackspace-foundation-sites/',
+        '/var/www/hackspace-foundation-sites/env/lib/python3.4/site-packages/',
+    ] + sys.path
+
 
 from django.core.wsgi import get_wsgi_application
 
